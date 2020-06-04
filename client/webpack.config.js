@@ -46,7 +46,7 @@ module.exports = {
     proxy: [
       {
         context: ["/"], // the end point request that will trigger this proxy to function
-        target: "http://localhost:7000", // what webpack dev server should prefix on our request
+        target: "http://localhost:8080", // what webpack dev server should prefix on our request
       },
     ],
     historyApiFallback: true,

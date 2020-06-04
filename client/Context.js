@@ -7,7 +7,7 @@ function ContextProvider({ children }) {
   const [tutorials, setTutorials] = useState([]);
 
   useEffect(() => {
-    //fetchTutorials();
+    fetchTutorials();
   }, []);
 
   async function fetchTutorials() {
