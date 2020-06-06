@@ -1,20 +1,19 @@
 const cors = require("cors");
 
-const whiteList = [
-  "http://localhost:8081",
+const whitelist = [
+  "http://localhost:8080",
   "https://nayib.abdala.com",
   "http://nayib.abdala.com",
 ];
 
-const originIsWhitelisted = (origin, callback) => {
-  if (whiteList.indexOf(origin) !== -1) {
-    callback(null, true);
+const corsOptionsDelegate = function (req, callback) {
+  var corsOptions;
+  if (whitelist.indexOf(req.header("Origin")) !== -1) {
+    corsOptions = { origin: true }; // reflect (enable) the requested origin in the CORS response
   } else {
-    console.log("Not allowed");
-    callback(new Error("Not allowed by CORS"));
+    corsOptions = { origin: false }; // disable CORS for this request
   }
+  callback(null, corsOptions); // callback expects two parameters: error and options
 };
 
-const corsOptions = { origin: originIsWhitelisted };
-
-module.exports = { corsOptions, cors };
+module.exports = { corsOptionsDelegate, cors };

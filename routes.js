@@ -1,14 +1,14 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const tutorialsController = require("./controllers/tutorials");
-const { corsOptions, cors } = require("./cors.js");
+const { corsOptionsDelegate, cors } = require("./cors");
 
 const router = express.Router();
 router.use(bodyParser.json());
 
 router.get(
   "/tutorials",
-  cors(corsOptions),
+  cors(corsOptionsDelegate),
   tutorialsController.getAllTutorials
 );
 //router.get("/tutorials/:tutorialId", tutorialsController.getTutorial);
