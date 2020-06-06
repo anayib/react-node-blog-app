@@ -1,4 +1,4 @@
-const readTutorialFile = require("../utils");
+require("../utils");
 
 const tutorials = [
   {

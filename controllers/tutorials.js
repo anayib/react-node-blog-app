@@ -1,5 +1,3 @@
-//const tutorials = require("../services/tutorials");
-//const Tutorials = require("../models/tutorials");
 const tutorials = require("../services/tutorials");
 
 exports.getAllTutorials = async (req, res, next) => {
@@ -18,9 +16,7 @@ exports.getAllTutorials = async (req, res, next) => {
 getTutorials = async () => {
   try {
     return tutorials.map(async (tutorial) => {
-      const fileContent = await readTutorialFile(
-        `server/tutorials/${tutorial.id}.md`
-      );
+      const fileContent = await readTutorialFile(`tutorials/${tutorial.id}.md`);
       tutorial.content = fileContent.toString();
       return tutorial;
     });
