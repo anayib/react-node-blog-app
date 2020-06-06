@@ -12,7 +12,7 @@ function ContextProvider({ children }) {
 
   async function fetchTutorials() {
     try {
-      const content = await axios.get("http://localhost:8080/api/tutorials");
+      const content = await axios.get("/api/tutorials");
       setTutorials(content.data);
     } catch (error) {
       console.log(error);

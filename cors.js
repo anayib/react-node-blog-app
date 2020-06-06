@@ -2,8 +2,9 @@ const cors = require("cors");
 
 const whitelist = [
   "http://localhost:8080",
-  "https://nayib.abdala.com",
-  "http://nayib.abdala.com",
+  "https://nayibabdala.com",
+  "http://nayibabdala.com",
+  "https://personal-blog-nayib-node.herokuapp.com",
 ];
 
 const corsOptionsDelegate = function (req, callback) {
