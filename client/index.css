@@ -65,7 +65,7 @@ body a {
   list-style-type: none;
 }
 
-.results-container {
+.search-suggestions {
   position: relative;
   background-color: white;
   width: 103%;
@@ -89,4 +89,18 @@ body a {
   height: 25px;
   border-radius: 5px;
   padding: 5px 4px 5px 16px;
+}
+
+.show-option {
+  position: relative;
+  top: 0;
+  left: 0;
+  margin-bottom: 10px;
+}
+.selected-choice {
+  background-color: #ececec;
+}
+
+a.selected-choice {
+  color: #303030;
 }

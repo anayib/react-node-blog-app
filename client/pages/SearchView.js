@@ -1,12 +1,12 @@
 import React from "react";
 import { ContextProviderSearch } from "../SearchContext";
-import DisplaySearchResult from "../components/DisplaySearchResult";
+import SearchSuggestions from "../components/SearchSuggestions";
 
 function SearchView() {
   return (
     <ContextProviderSearch>
       <h1 className="show-content">
-        <DisplaySearchResult />
+        <SearchSuggestions />
       </h1>
     </ContextProviderSearch>
   );

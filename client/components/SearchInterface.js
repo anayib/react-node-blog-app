@@ -1,7 +1,7 @@
 import React from "react";
 import { ContextProviderSearch } from "../SearchContext";
 import SearchForm from "./SearchForm";
-import DisplaySearchResult from "./DisplaySearchResult";
+import SearchSuggestions from "./SearchSuggestions";
 
 function SearchInterface() {
   return (
@@ -9,7 +9,7 @@ function SearchInterface() {
       <ContextProviderSearch>
         <div className="search-container">
           <SearchForm />
-          <DisplaySearchResult />
+          <SearchSuggestions />
         </div>
       </ContextProviderSearch>
     </div>

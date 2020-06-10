@@ -1,6 +1,6 @@
 import Fuse from "fuse.js";
 
-async function fuseQuery(tutorialsArray) {
+async function fetchMatches(tutorialsArray) {
   return new Fuse(tutorialsArray, options);
 }
 
@@ -25,4 +25,4 @@ const options = {
   ],
 };
 
-export default fuseQuery;
+export default fetchMatches;

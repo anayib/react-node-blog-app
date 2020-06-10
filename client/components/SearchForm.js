@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Context } from "../SearchContext";
 
 function SearchForm() {
-  const { searchKeyword, handleChange, handleEnter } = useContext(Context);
+  const { searchKeyword, handleChange, handleKeyDown } = useContext(Context);
 
   return (
     <div>
@@ -12,7 +12,7 @@ function SearchForm() {
           placeholder="De qué quieres aprender hoy"
           value={searchKeyword}
           onChange={handleChange}
-          onKeyDown={handleEnter}
+          onKeyDown={handleKeyDown}
         />
       </div>
     </div>
