@@ -1,21 +1,22 @@
-import React, { useState, useContext, useEffect } from "react";
-//import searchWithFuse from "./utils/search";
+import React, { useState, useContext } from "react";
 import { Context as AppContext } from "./Context";
+import { useHistory } from "react-router-dom";
 import fetchMatches from "./utils/search";
 const Context = React.createContext();
 
 function ContextProviderSearch({ children }) {
   const [searchKeyword, setSearchKeyword] = useState(""); // text input
   const [searchResults, setSearchResults] = useState([]); // matches
-  const { tutorials } = useContext(AppContext); // listUI
+  const { dummyData } = useContext(AppContext); // listUI
   const [bestMatchIndex, setBestMatchIndex] = useState(null);
   const [selectedOption, setSelectedOption] = useState(null);
   const [optionsVisible, setOptionsVisible] = useState(false);
-  const tutorialsArray = tutorials;
+  const history = useHistory();
+  const tutorialsArray = dummyData;
 
   const handleChange = async (event) => {
     let keywords = event.target.value;
-    showMathes(keywords);
+    showMatches(keywords);
   };
 
   const handleOnClick = async () => {
@@ -23,6 +24,7 @@ function ContextProviderSearch({ children }) {
   };
 
   const handleKeyDown = async (event) => {
+    let keyword = "";
     setSelectedOption(null);
     switch (event.key) {
       case "ArrowDown":
@@ -37,7 +39,7 @@ function ContextProviderSearch({ children }) {
           setSelectedOption(selectedOption + 1);
         }
         setBestMatchIndex(null);
-        showMathes(event.target.value);
+        showMatches(event.target.value);
         break;
       case "ArrowUp":
         event.preventDefault();
@@ -48,18 +50,29 @@ function ContextProviderSearch({ children }) {
           setSelectedOption(selectedOption - 1);
         }
         setBestMatchIndex(null);
-        showMathes(event.target.value);
+        showMatches(event.target.value);
         break;
       case "Tab":
         if (bestMatchIndex !== null && searchResults.length !== 0) {
-          event.target.value = searchResults[bestMatchIndex].item.title;
+          keyword = searchResults[bestMatchIndex].item.title;
+          event.target.value = keyword;
+          setSearchKeyword(keyword);
           event.preventDefault();
         }
+        break;
+      case "Enter":
+        console.log("inicia enter");
+        keyword = document.getElementById("search-input").value;
+        setSearchKeyword(keyword);
+        showMatches(keyword);
+        history.push("/buscar");
+        cleanSuggesions(event);
+        event.preventDefault();
         break;
     }
   };
 
-  const showMathes = async (keywords) => {
+  const showMatches = async (keywords) => {
     if (keywords.length > 0) {
       setOptionsVisible(true);
       setSearchKeyword(event.target.value);
@@ -68,7 +81,9 @@ function ContextProviderSearch({ children }) {
         .then((data) => setSearchResults(data))
         .then(() => setBestMatchIndex(0))
         .catch((err) =>
-          console.log(`ESTE ERROR DENTRO DE SHOWMATHCES: ${err}`)
+          console.log(
+            `Error raised in SearchContext component line 84: ${err.message}`
+          )
         );
     } else {
       resetMatches(event.target.value);
@@ -76,19 +91,23 @@ function ContextProviderSearch({ children }) {
   };
 
   const resetMatches = (targetValue) => {
-    const target = targetValue || null;
+    const target = targetValue || "";
     setSearchKeyword(target);
     setSearchResults([]);
     setBestMatchIndex(null);
     setOptionsVisible(false);
   };
 
-  console.log(selectedOption);
+  const cleanSuggesions = (targetValue) => {
+    setSearchKeyword("");
+  };
+
   return (
     <Context.Provider
       value={{
         searchResults,
         searchKeyword,
+        setSearchResults,
         handleChange,
         handleOnClick,
         handleKeyDown,
