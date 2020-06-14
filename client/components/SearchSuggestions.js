@@ -1,15 +1,17 @@
 import React, { useContext, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { Context } from "../SearchContext";
 
 function SearchSuggestions() {
+  const history = useHistory();
   const {
     searchResults,
     handleOnClick,
     selectedOption,
     optionsVisible,
   } = useContext(Context);
-  const display = optionsVisible ? "flex" : "none";
+  const display =
+    optionsVisible && history.location.pathname !== "/buscar" ? "flex" : "none";
 
   const tutorialsList = searchResults.map((tutorial, index) => {
     let selectedClass = "";

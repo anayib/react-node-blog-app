@@ -1,14 +1,11 @@
 import React from "react";
-import { ContextProviderSearch } from "../SearchContext";
-import SearchSuggestions from "../components/SearchSuggestions";
+import SearchQueryResults from "../components/SearchQueryResults";
 
 function SearchView() {
   return (
-    <ContextProviderSearch>
-      <h1 className="show-content">
-        <SearchSuggestions />
-      </h1>
-    </ContextProviderSearch>
+    <div>
+      <SearchQueryResults />
+    </div>
   );
 }
 

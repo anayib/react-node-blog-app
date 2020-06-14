@@ -5,13 +5,9 @@ import SearchSuggestions from "./SearchSuggestions";
 
 function SearchInterface() {
   return (
-    <div>
-      <ContextProviderSearch>
-        <div className="search-container">
-          <SearchForm />
-          <SearchSuggestions />
-        </div>
-      </ContextProviderSearch>
+    <div className="search-container">
+      <SearchForm />
+      <SearchSuggestions />
     </div>
   );
 }

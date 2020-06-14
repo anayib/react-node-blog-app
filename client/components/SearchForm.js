@@ -9,10 +9,12 @@ function SearchForm() {
       <div>
         <input
           type="text"
+          id="search-input"
           placeholder="De qué quieres aprender hoy"
           value={searchKeyword}
           onChange={handleChange}
           onKeyDown={handleKeyDown}
+          autofocus="true"
         />
       </div>
     </div>
