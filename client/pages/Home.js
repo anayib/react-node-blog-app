@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Intro from "../components/Intro";
 import NewsletterFrom from "../components/NewsletterForm";
-import axios from "axios";
 
 function Home() {
   return (

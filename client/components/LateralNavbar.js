@@ -12,9 +12,6 @@ function LateralNavbar() {
         <Link to="/tutoriales">Tutoriales</Link>
       </li>
       <li>
-        <Link to="/preguntas-frecuentes">FAQ</Link>
-      </li>
-      <li>
         <a href="https://twitter.com/anayib" target="_blank">
           Sígueme en Twitter
         </a>

@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
+    "fuse.js": "^6.0.4",
     "highlight.js": "^10.0.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

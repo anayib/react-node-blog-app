@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Tutorial from "./pages/Tutorial";
 import Tutorials from "./pages/Tutorials";
-import Faq from "./components/Faq";
+import SearchView from "./pages/SearchView";
 
 function App() {
   return (
@@ -16,13 +16,13 @@ function App() {
         <Route exact path="/tutoriales">
           <Tutorials />
         </Route>
+        <Route path="/buscar">
+          <SearchView />
+        </Route>
+        <Route path="/contacto"></Route>
         <Route path="/:tutorialId">
           <Tutorial />
         </Route>
-        <Route path="/preguntas-frecuentes">
-          <Faq />
-        </Route>
-        <Route path="/contacto"></Route>
         <Route exact path="/">
           <Home />
         </Route>
