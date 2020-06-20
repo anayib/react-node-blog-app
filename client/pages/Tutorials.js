@@ -15,11 +15,7 @@ function Tutorials() {
     );
   });
 
-  return (
-    <div className="show-content">
-      <div>{tutorialsList}</div>
-    </div>
-  );
+  return <div className="show-content">{tutorialsList}</div>;
 }
 
 export default Tutorials;

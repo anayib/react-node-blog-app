@@ -11,7 +11,7 @@ function SearchSuggestions() {
     optionsVisible,
   } = useContext(Context);
   const display =
-    optionsVisible && history.location.pathname !== "/buscar" ? "flex" : "none";
+    optionsVisible && history.location.pathname !== "/search" ? "flex" : "none";
 
   const tutorialsList = searchResults.map((tutorial, index) => {
     let selectedClass = "";

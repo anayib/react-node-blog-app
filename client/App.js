@@ -4,27 +4,30 @@ import "./index.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
+import Contact from "./pages/Contact";
 import Tutorial from "./pages/Tutorial";
 import Tutorials from "./pages/Tutorials";
 import SearchView from "./pages/SearchView";
 
 function App() {
   return (
-    <div>
+    <div className="wrapper">
       <Navbar />
       <Switch>
-        <Route exact path="/tutoriales">
-          <Tutorials />
-        </Route>
-        <Route path="/buscar">
-          <SearchView />
-        </Route>
-        <Route path="/contacto"></Route>
-        <Route path="/:tutorialId">
-          <Tutorial />
+        <Route exact path="/bio">
+          <Home />
         </Route>
         <Route exact path="/">
-          <Home />
+          <Tutorials />
+        </Route>
+        <Route path="/search">
+          <SearchView />
+        </Route>
+        <Route path="/contact">
+          <Contact />
+        </Route>
+        <Route path="/:tutorialId">
+          <Tutorial />
         </Route>
       </Switch>
       <Footer />

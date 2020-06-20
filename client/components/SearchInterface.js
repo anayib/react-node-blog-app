@@ -1,5 +1,4 @@
 import React from "react";
-import { ContextProviderSearch } from "../SearchContext";
 import SearchForm from "./SearchForm";
 import SearchSuggestions from "./SearchSuggestions";
 
