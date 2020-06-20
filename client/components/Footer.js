@@ -4,10 +4,12 @@ function Footer() {
   const year = new Date();
 
   return (
-    <div>
-      <p>
-        <small>&copy; {year.getFullYear()} Lean Innovation Group</small>
-      </p>
+    <div className="footer">
+      <a href="https://twitter.com/anayib" target="_blank">
+        Follow me on Twitter
+      </a>
+      <br />
+      <small>&copy; {year.getFullYear()} Lean Innovation Group</small>
     </div>
   );
 }

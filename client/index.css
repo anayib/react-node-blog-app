@@ -1,6 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap");
+
 body {
   color: #bebebe;
   background-color: #3c3c3c;
+  font-family: "Raleway", sans-serif;
+}
+
+body p {
+  font-size: 18px;
+  line-height: 1.5em;
+}
+
+@media screen and (min-width: 1024px) {
+  p {
+    font-size: 19px;
+  }
 }
 
 body a:hover {
@@ -11,47 +25,134 @@ body a:visited {
   color: #bebebe;
 }
 
-body a {
+.wrapper {
+  padding: 1em;
+}
+
+a {
   color: #bebebe;
   text-decoration: none;
+  font-weight: bold;
 }
 
-.top-navbar {
-  background-color: #3c3c3c;
-  width: 100vw;
-  height: 60px;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  right: 0px;
-  border-bottom: 0.5px solid #5a5c5e;
+img {
+  width: 100%;
 }
 
-.lateral-menu {
-  position: absolute;
-  left: 0;
-  background-color: #3c3c3c;
-  width: 210px;
-  max-width: 350px;
-  height: 100%;
-  z-index: 1;
-  top: 50px;
-  padding-left: 40px;
-  padding-top: 40px;
-}
-
-.lateral-menu li {
+ul {
   list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.top-navbar-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.lateral-navbar-container {
+  position: absolute;
+  left: 30px;
+  top: 110px;
+  width: 100%;
+}
+
+nav li {
+  margin-right: 0.5em;
   padding: 5px;
 }
 
-.show-content {
-  margin-left: 205px;
-  margin-top: 60px;
-  padding-right: 80px;
+nav ul {
+  display: flex;
+  margin-top: 1em;
+}
+
+nav li a {
+  padding: 0.3em 0.4em;
+}
+
+@media screen and (min-width: 1024px) {
+  .menu-burger svg {
+    display: none;
+  }
+}
+
+.home-top-navbar-link p {
+  font-size: 30px;
+  margin-top: 15px;
+}
+
+@media screen and (min-width: 1024px) {
+  .home-top-navbar-link p {
+    display: none;
+  }
+}
+
+.search-icon {
+  top: 50px;
+}
+
+.search-back-arrow-icon {
+  position: relative;
+  top: 8px;
+  margin-right: 10px;
+}
+
+/* Large screens */
+
+.lateral-menu {
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  line-height: 3.75rem;
+  height: -webkit-fill-available;
+  margin-top: 0;
+  padding-top: 50px;
+  padding-left: 15px;
+  background-color: #3c3c3c;
+}
+
+@media screen and (min-width: 1024px) {
+  .lateral-menu {
+    font-size: 16px;
+    width: 200px;
+    line-height: 1.75rem;
+  }
+}
+
+.closeLateralMenu {
   position: absolute;
-  padding-left: 40px;
-  z-index: -1;
+  right: 170px;
+  top: 30px;
+}
+
+@media screen and (min-width: 1024px) {
+  .closeLateralMenu {
+    display: none;
+  }
+}
+
+.show-content {
+  margin-top: 0px;
+  padding: 0px 20px 10px 20px;
+  margin-bottom: 30px;
+}
+
+@media screen and (min-width: 667px) {
+  .show-content {
+    padding: 0px 60px 10px 60px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .show-content {
+    margin-left: 250px;
+    margin-top: 45px;
+  }
 }
 
 .show-note {
@@ -59,36 +160,66 @@ body a {
   position: relative;
   top: 0;
   left: 0;
-}
-
-.no-bullets {
-  list-style-type: none;
+  margin-top: 45px;
 }
 
 .search-suggestions {
-  position: relative;
   background-color: white;
-  width: 103%;
-  top: 80%;
   border-radius: 0 0 24px 24px;
+  display: flex;
+  width: 85%;
+  margin-left: 35px;
+  color: #3c3c3c;
+}
+
+.search-suggestions ul {
   display: flex;
   flex-direction: column;
 }
+
+@media screen and (min-width: 1024px) {
+  .search-suggestions {
+    width: 81.5%;
+  }
+}
+
 .search-container {
   display: block;
-  position: absolute;
-  width: 43%;
-  max-width: 100%;
-  top: 10px;
-  left: 32%;
+  position: relative;
+  width: 80%;
+  top: 40px;
+  left: 20%;
   margin-left: -50px;
+  margin-bottom: 90px;
 }
 
 .search-container input {
-  width: 100%;
-  height: 25px;
+  width: 80%;
+  height: 45px;
   border-radius: 5px;
   padding: 5px 4px 5px 16px;
+  margin-top: 30px;
+  font-size: 22px;
+}
+
+@media screen and (min-width: 667px) {
+  .search-container {
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .search-container {
+    top: 15px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .search-container input {
+    top: 25px;
+    font-size: 18px;
+    height: 30px;
+  }
 }
 
 .show-option {
@@ -103,4 +234,13 @@ body a {
 
 a.selected-choice {
   color: #303030;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 5px;
+  flex-direction: column;
+  padding-top: 115px;
 }

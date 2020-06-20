@@ -10,9 +10,12 @@ import SearchView from "./pages/SearchView";
 
 function App() {
   return (
-    <div>
+    <div className="wrapper">
       <Navbar />
       <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
         <Route exact path="/tutoriales">
           <Tutorials />
         </Route>
@@ -22,9 +25,6 @@ function App() {
         <Route path="/contacto"></Route>
         <Route path="/:tutorialId">
           <Tutorial />
-        </Route>
-        <Route exact path="/">
-          <Home />
         </Route>
       </Switch>
       <Footer />

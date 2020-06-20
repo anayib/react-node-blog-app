@@ -11,6 +11,7 @@ function ContextProviderSearch({ children }) {
   const [bestMatchIndex, setBestMatchIndex] = useState(null);
   const [selectedOption, setSelectedOption] = useState(null);
   const [optionsVisible, setOptionsVisible] = useState(false);
+  const [searchVisible, setSearchVisible] = useState(false);
   const history = useHistory();
 
   const tutorialsArray = tutorials;
@@ -20,8 +21,10 @@ function ContextProviderSearch({ children }) {
     showMatches(keywords);
   };
 
-  const handleOnClick = async () => {
+  const handleOnClick = async (event) => {
     resetMatches();
+    cleanSuggesions(event);
+    setSearchVisible(false);
   };
 
   const handleKeyDown = async (event) => {
@@ -69,8 +72,19 @@ function ContextProviderSearch({ children }) {
         history.push("/buscar");
         cleanSuggesions(event);
         event.preventDefault();
+        if (searchResults.length !== 0) {
+          setSearchVisible(false);
+        }
         break;
     }
+  };
+
+  const handleShowSearchBar = (event) => {
+    setSearchVisible(true);
+  };
+
+  const handleBackArrowSearch = () => {
+    setSearchVisible(false);
   };
 
   const showMatches = async (keywords) => {
@@ -114,6 +128,9 @@ function ContextProviderSearch({ children }) {
         handleKeyDown,
         selectedOption,
         optionsVisible,
+        searchVisible,
+        handleShowSearchBar,
+        handleBackArrowSearch,
       }}
     >
       {children}

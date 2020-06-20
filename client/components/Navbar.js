@@ -1,13 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import TopNavbar from "./TopNavbar";
 import LateralNavbar from "./LateralNavbar";
+import { Context } from "../SearchContext";
 
 function Navbar() {
+  const [
+    burgerMenuVisible,
+    setBurgerMenuVisible,
+    handleShowSearchBar,
+  ] = useState(false);
+
+  const handleShowBurgerMenu = () => {
+    setBurgerMenuVisible(!burgerMenuVisible);
+  };
+
   return (
-    <div>
-      <TopNavbar />
-      <LateralNavbar />
-    </div>
+    <header>
+      <nav>
+        <TopNavbar handleShowBurgerMenu={handleShowBurgerMenu} />
+        <LateralNavbar
+          burgerMenuVisible={burgerMenuVisible}
+          handleShowBurgerMenu={handleShowBurgerMenu}
+          handleShowSearchBar={handleShowSearchBar}
+        />
+      </nav>
+    </header>
   );
 }
 
