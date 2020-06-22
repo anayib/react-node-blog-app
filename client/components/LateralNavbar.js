@@ -85,7 +85,7 @@ function LateralNavbar(props) {
           </li>
           <li>
             <a href="https://twitter.com/anayib" target="_blank">
-              Follow me on Twitter
+              Twitter
             </a>
           </li>
         </ul>
