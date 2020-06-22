@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from "react";
+import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
 import { Context } from "../Context";
 import hljs from "highlight.js";
@@ -18,6 +19,52 @@ function Tutorial(props) {
 
   return (
     <div className="show-content">
+      <Helmet>
+        <title>{thisTutorial.title}</title>
+        <meta charset="utf-8" />
+        <meta name="description" content={thisTutorial.metaDescription} />
+        {/* FAcebook Linkedin cards */}
+        <meta
+          property="og:title"
+          content={thisTutorial.metaDescription || "Learn Java Script"}
+        />
+        <meta property="og:type" content="article" />
+        <meta
+          property="og:url"
+          content={`http://www.nayibabdala.com/${thisTutorial.id}`}
+        />
+        <meta
+          property="og:description"
+          content={thisTutorial.metaDescription || "Learn Java Script"}
+        />
+        <meta
+          property="og:image"
+          content={
+            thisTutorial.image ||
+            "http://www.leaninnovationgroup.com/images/nayib.jpg"
+          }
+        />
+
+        {/* Twitter cards */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@anayib" />
+        <meta
+          name="twitter:title"
+          content={thisTutorial.metaDescription || "Learn Java Script"}
+        />
+        <meta
+          name="twitter:description"
+          content={thisTutorial.metaDescription || "Learn Java Script"}
+        />
+        <meta
+          name="twitter:image"
+          content={
+            thisTutorial.image ||
+            "http://www.leaninnovationgroup.com/images/nayib.jpg"
+          }
+        />
+        <meta name="twitter:creator" content="@anayib" />
+      </Helmet>
       <h1>{thisTutorial.title}</h1>
       <div>{markdownContent}</div>
     </div>
