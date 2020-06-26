@@ -3,7 +3,11 @@ import { Link } from "react-router-dom";
 import { Context } from "../Context";
 
 function Tutorials() {
-  const { tutorials } = useContext(Context);
+  let { tutorials } = useContext(Context);
+  // tutorials =
+  //   tutorials.length > 0
+  //     ? tutorials
+  //     : JSON.parse(localStorage.getItem("tutorials"));
 
   const tutorialsList = tutorials.map((tutorial) => {
     return (

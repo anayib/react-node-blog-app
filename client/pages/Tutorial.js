@@ -11,7 +11,12 @@ function Tutorial(props) {
     applyStylesToComponents();
   }, []);
 
-  const { tutorials } = useContext(Context);
+  let { tutorials } = useContext(Context);
+  tutorials =
+    tutorials.length > 0
+      ? tutorials
+      : JSON.parse(localStorage.getItem("tutorials"));
+
   const { tutorialId } = useParams();
   const thisTutorial = tutorials.find((tutorial) => tutorial.id === tutorialId);
   const stringToMarkdown = thisTutorial.content;

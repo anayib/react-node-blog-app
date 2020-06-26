@@ -17,6 +17,8 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "nodemon": "^2.0.4"
   },
   "engines": {
