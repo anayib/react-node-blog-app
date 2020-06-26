@@ -16,6 +16,7 @@ function ContextProvider({ children }) {
     try {
       const content = await axios.get("/api/tutorials");
       setTutorials(content.data);
+      localStorage.setItem("tutorials", JSON.stringify(content.data));
     } catch (error) {
       console.log(error);
     }
