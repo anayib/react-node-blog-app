@@ -2,10 +2,13 @@ const HtmlWebPackPlugin = require("html-webpack-plugin"); // to add html webpack
 const path = require("path"); // needed if using path.resove() from node
 
 module.exports = {
-  entry: "./index.js",
+  entry: {
+    index: "./index.js",
+    searchContext: "./SearchContext.js",
+  },
   output: {
     path: path.resolve(__dirname, "build"),
-    filename: "main.js",
+    filename: "[name].bundle.js",
   },
   module: {
     rules: [
@@ -42,6 +45,11 @@ module.exports = {
       filename: "./index.html",
     }),
   ],
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+    },
+  },
   devServer: {
     proxy: [
       {

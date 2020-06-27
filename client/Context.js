@@ -6,7 +6,6 @@ const Context = React.createContext();
 
 function ContextProvider({ children }) {
   const [tutorials, setTutorials] = useState([]);
-  //let [dummyData, setDummyData] = useState(dummyTestData);
 
   useEffect(() => {
     fetchTutorials();

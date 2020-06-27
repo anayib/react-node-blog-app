@@ -1,17 +1,18 @@
 import React from "react";
 
-function NewsletterFrom() {
+function NewsletterForm() {
   return (
     <div>
-      <h3>Recibe mis notas</h3>
-      <p>Envío un email cada uno o dos meses</p>
-      <form>
+      <form className="form-container">
+        <p>Get updates once a month</p>
+        <small>
+          I write about my experience creating products and internet business
+        </small>
         <input type="text" className="mailing-input" />
-        <br />
-        <button>Recibir</button>
+        <button className="submit-buttom">Subscribe</button>
       </form>
     </div>
   );
 }
 
-export default NewsletterFrom;
+export default NewsletterForm;
