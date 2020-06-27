@@ -13,7 +13,7 @@ function SearchSuggestions() {
   const display =
     optionsVisible && history.location.pathname !== "/search" ? "flex" : "none";
 
-  const tutorialsList = searchResults.map((tutorial, index) => {
+  const articlesList = searchResults.map((article, index) => {
     let selectedClass = "";
     if (index === selectedOption) {
       selectedClass = "no-bullets selected-choice show-option";
@@ -21,9 +21,9 @@ function SearchSuggestions() {
       selectedClass = "no-bullets show-option";
     }
     return (
-      <li key={tutorial.item.id} className={selectedClass}>
-        <Link onClick={handleOnClick} to={`/${tutorial.item.id}`}>
-          {tutorial.item.title}
+      <li key={article.item.id} className={selectedClass}>
+        <Link onClick={handleOnClick} to={`/${article.item.id}`}>
+          {article.item.title}
         </Link>
       </li>
     );
@@ -31,7 +31,7 @@ function SearchSuggestions() {
 
   return (
     <div className="search-suggestions" style={{ display: display }}>
-      <ul>{tutorialsList}</ul>
+      <ul>{articlesList}</ul>
     </div>
   );
 }

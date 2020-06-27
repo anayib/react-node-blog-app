@@ -2,9 +2,9 @@ import axios from "axios";
 jest.mock("axios");
 import articles from "./dummyTestData";
 
-const fetchTutorials = async () => {
+const fetchArticles = async () => {
   try {
-    const content = await axios.get("/api/tutorials");
+    const content = await axios.get("/api/articles");
     return content.data ? content.data : undefined;
   } catch (error) {}
 };
@@ -14,7 +14,7 @@ axios.get.mockResolvedValue(mockResponse);
 
 describe("Api tests", () => {
   it("Get Articles From API", async () => {
-    const result = await fetchTutorials();
+    const result = await fetchArticles();
     await expect(result).toBeDefined();
     await expect(result.length).toBeGreaterThan(0);
   });

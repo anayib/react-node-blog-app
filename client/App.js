@@ -6,8 +6,8 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
-import Tutorial from "./pages/Tutorial";
-import Tutorials from "./pages/Tutorials";
+import Article from "./pages/Article";
+import Articles from "./pages/Articles";
 import SearchView from "./pages/SearchView";
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
           <Home />
         </Route>
         <Route exact path="/">
-          <Tutorials />
+          <Articles />
         </Route>
         <Route path="/search">
           <SearchView />
@@ -35,8 +35,8 @@ function App() {
         <Route path="/contact">
           <Contact />
         </Route>
-        <Route path="/:tutorialId">
-          <Tutorial />
+        <Route path="/:articleId">
+          <Article />
         </Route>
       </Switch>
       <Footer />

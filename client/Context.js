@@ -5,23 +5,23 @@ import axios from "axios";
 const Context = React.createContext();
 
 function ContextProvider({ children }) {
-  const [tutorials, setTutorials] = useState([]);
+  const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-    fetchTutorials();
+    fetchArticles();
   }, []);
 
-  async function fetchTutorials() {
+  async function fetchArticles() {
     try {
-      const content = await axios.get("/api/tutorials");
-      setTutorials(content.data);
-      localStorage.setItem("tutorials", JSON.stringify(content.data));
+      const content = await axios.get("/api/articles");
+      setArticles(content.data);
+      localStorage.setItem("articles", JSON.stringify(content.data));
     } catch (error) {
       console.log(error);
     }
   }
-  console.log(tutorials);
-  return <Context.Provider value={{ tutorials }}>{children}</Context.Provider>;
+  console.log(articles);
+  return <Context.Provider value={{ articles }}>{children}</Context.Provider>;
 }
 
 export { ContextProvider, Context };

@@ -5,15 +5,15 @@ import { Context } from "../SearchContext";
 function SearchQueryResults(props) {
   const { searchResults } = useContext(Context);
 
-  const tutorialsList = searchResults.map((tutorial) => {
+  const articlesList = searchResults.map((article) => {
     return (
       <div
-        key={tutorial.item ? tutorial.item.id : tutorial.id}
+        key={article.item ? article.item.id : article.id}
         className="show-note"
       >
         <h1>
-          <Link to={`/${tutorial.item ? tutorial.item.id : tutorial.id}`}>
-            {tutorial.item ? tutorial.item.title : tutorial.title}
+          <Link to={`/${article.item ? article.item.id : article.id}`}>
+            {article.item ? article.item.title : article.title}
           </Link>
         </h1>
       </div>
@@ -22,7 +22,7 @@ function SearchQueryResults(props) {
 
   return (
     <div className="show-content">
-      <div>{tutorialsList}</div>
+      <div>{articlesList}</div>
     </div>
   );
 }

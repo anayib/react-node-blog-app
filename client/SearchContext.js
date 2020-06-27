@@ -7,14 +7,14 @@ const Context = React.createContext();
 function ContextProviderSearch({ children }) {
   const [searchKeyword, setSearchKeyword] = useState(""); // text input
   const [searchResults, setSearchResults] = useState([]); // matches
-  const { tutorials } = useContext(AppContext); // listUI
+  const { articles } = useContext(AppContext); // listUI
   const [bestMatchIndex, setBestMatchIndex] = useState(null);
   const [selectedOption, setSelectedOption] = useState(null);
   const [optionsVisible, setOptionsVisible] = useState(false);
   const [searchVisible, setSearchVisible] = useState(false);
   const history = useHistory();
 
-  const tutorialsArray = tutorials;
+  const articlesArray = articles;
 
   const handleChange = async (event) => {
     let keywords = event.target.value;
@@ -91,7 +91,7 @@ function ContextProviderSearch({ children }) {
     if (keywords.length > 0) {
       setOptionsVisible(true);
       setSearchKeyword(event.target.value);
-      await fetchMatches(tutorialsArray)
+      await fetchMatches(articlesArray)
         .then((result) => result.search(searchKeyword))
         .then((data) => setSearchResults(data))
         .then(() => setBestMatchIndex(0))

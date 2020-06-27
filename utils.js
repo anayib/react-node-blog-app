@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-readTutorialFile = (path) => {
+readArticleFile = (path) => {
   return new Promise((resolve, reject) => {
     fs.readFile(path, (err, data) => {
       if (err) {
@@ -12,4 +12,4 @@ readTutorialFile = (path) => {
   });
 };
 
-module.exports = readTutorialFile;
+module.exports = readArticleFile;

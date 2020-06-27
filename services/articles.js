@@ -1,6 +1,6 @@
 require("../utils");
 
-const tutorials = [
+const articles = [
   {
     id: "introduction-to-node-js",
     title: "Introduction to Node JS",
@@ -15,4 +15,4 @@ const tutorials = [
   },
 ];
 
-module.exports = tutorials;
+module.exports = articles;

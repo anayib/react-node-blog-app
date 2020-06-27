@@ -1,7 +1,7 @@
 import Fuse from "fuse.js";
 
-async function fetchMatches(tutorialsArray) {
-  return new Fuse(tutorialsArray, options);
+async function fetchMatches(articlesArray) {
+  return new Fuse(articlesArray, options);
 }
 
 const options = {

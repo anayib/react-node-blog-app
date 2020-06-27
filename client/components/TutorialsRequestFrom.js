@@ -1,14 +1,14 @@
 import React from "react";
 
-function TutorialsRequestForm() {
+function ArticlesRequestForm() {
   return (
     <div>
       <form>
         <input type="text" />
-        <button>Notificarme de nuevos tutoriales</button>
+        <button>Notify me about new articles</button>
       </form>
     </div>
   );
 }
 
-export default TutorialsRequestForm;
+export default ArticlesRequestForm;
