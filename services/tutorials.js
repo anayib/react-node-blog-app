@@ -2,16 +2,16 @@ require("../utils");
 
 const tutorials = [
   {
-    id: "introduccion-a-node-js",
-    title: "Introducción a Node JS",
+    id: "introduction-to-node-js",
+    title: "Introduction to Node JS",
     tags: ["Node", "JavaScript"],
-    metaDescription: "Node, aprender node JS para directores de producto",
+    metaDescription: "Learn NodeJS",
   },
   {
-    id: "introduccion-a-react-js",
-    title: "Introducción a React JS",
+    id: "introduction-to-react-js",
+    title: "Introduction to React JS",
     tags: ["React", "JavaScript"],
-    metaDescription: "React, aprender react para directores de producto",
+    metaDescription: "Learn React JS",
   },
 ];
 
