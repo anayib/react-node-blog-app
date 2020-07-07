@@ -3,20 +3,18 @@ const articles = require("../services/articles");
 exports.getAllArticles = async (req, res, next) => {
   try {
     const allArticles = await getArticles();
-    Promise.all(allArticles).then((result) => {
-      res.statusCode = 200;
-      res.setHeader("Content-Type", "applciation/json");
-      res.json(result);
-    });
+    res.statusCode = 200;
+    res.setHeader("Content-Type", "applciation/json");
+    res.json(allArticles);
   } catch (error) {
     next(error);
   }
 };
 
-getArticles = async () => {
+getArticles = () => {
   try {
-    return articles.map(async (article) => {
-      const fileContent = await readArticleFile(`articles/${article.id}.md`);
+    return articles.map((article) => {
+      const fileContent = readArticleFile(`articles/${article.id}.md`);
       article.content = fileContent.toString();
       return article;
     });
