@@ -66,3 +66,7 @@ You can check a live version of this project at <a href="http://www.nayibabdala.
 ## License
 
 <a href="https://opensource.org/licenses/MIT" target="_blank">MIT</a>
+
+## Special thanks
+
+To @alexrqs and @germanescobar for their recomendations
