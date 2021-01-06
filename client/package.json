@@ -35,7 +35,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "fuse.js": "^6.0.4",
-    "highlight.js": "^10.0.3",
+    "highlight.js": "^10.4.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
